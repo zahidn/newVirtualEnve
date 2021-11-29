@@ -49,6 +49,9 @@ async def get_current_user(token: str = Depends(oauth2_scheme),db:Session=Depend
     if user is None:
         raise credentials_exception
     return user
+@app.get("/")
+def test():
+    return {"message":"successfully deployed"}
 @app.post("/users/", response_model=schemas.User,tags=["Users"])
 def create_user(user: schemas.UserCreate, db: Session = Depends(get_db)):
     db_user = crud.get_user_by_email(db, email=user.email)
