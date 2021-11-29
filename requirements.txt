@@ -2,7 +2,6 @@ sqlalchemy
 python-jose
 uvicorn
 fastapi
-mariadb
 passlib
 python-multipart==0.0.5
 bcrypt==3.2.0
